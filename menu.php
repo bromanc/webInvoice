@@ -12,7 +12,6 @@
             <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">User connected: <?php echo $_SESSION['user']; ?>
                 <span class="caret"></span></button>
             <ul class="dropdown-menu">
-                <li><a href="#">My account</a></li>
                 <li><a href="action.php?action=logout">Log out</a></li>		  
             </ul>
         </li>

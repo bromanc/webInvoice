@@ -25,7 +25,7 @@ if (!empty($_POST['email']) && !empty($_POST['pwd'])) {
 <div style="width: 800px; margin: 200px auto;">	
     <div class="col-xs-6">
         <div class="heading">
-            <h2>Simple Invoice System</h2>
+            <h2>Herrajes & Tiraderas</h2>
         </div>
         <div class="login-form">
             <form action="" method="post">

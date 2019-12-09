@@ -5,11 +5,11 @@ include 'Invoice.php';
 $invoice = new Invoice();
 $invoice->checkLoggedIn();
 ?>
-<title>Simple Invoice System</title>
+<title>Herrajes & Tiraderas</title>
 <script src="js/invoice.js"></script>
 <link href="css/style.css" rel="stylesheet">
 <div class="container">		
-    <h2 class="title">Simple Invoice System using PHP</h2>
+    <h2 class="title">Herrajes & Tiraderas</h2>
     <?php include('menu.php'); ?>			  
     <table id="data-table" class="table table-condensed table-striped">
         <thead>
