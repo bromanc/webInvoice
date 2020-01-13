@@ -13,7 +13,7 @@ if (!empty($_GET['update_id']) && $_GET['update_id']) {
     $invoiceItems = $invoice->getInvoiceItems($_GET['update_id']);
 }
 ?>
-<title>Simple Invoice System</title>
+<title>SOCHEF</title>
 <script src="js/invoice.js"></script>
 <link href="css/style.css" rel="stylesheet">
 <div class="container content-invoice">
@@ -21,7 +21,7 @@ if (!empty($_GET['update_id']) && $_GET['update_id']) {
         <div class="load-animate animated fadeInUp">
             <div class="row">
                 <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    <h2 class="title">Simple Invoice System using PHP</h2>
+                    <h2 class="title">Herrajes & Tiraderas</h2>
                     <?php include('menu.php'); ?>			
                 </div>		    		
             </div>

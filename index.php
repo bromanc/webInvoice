@@ -19,10 +19,10 @@ if (!empty($_POST['email']) && !empty($_POST['pwd'])) {
     }
 }
 ?>
-<title>Simple Invoice System</title>
+<title>SOCHEF</title>
 <script src="js/invoice.js"></script>
 <link href="css/style.css" rel="stylesheet">
-<div style="width: 800px; margin: 200px auto;">	
+<div style="width: 800px; margin: 200px auto; background-image: url('images/bg.jpg');">	
     <div class="col-xs-6">
         <div class="heading">
             <h2>Herrajes & Tiraderas</h2>

@@ -9,11 +9,11 @@ if (!empty($_POST['companyName']) && $_POST['companyName']) {
     header("Location:invoice_list.php");
 }
 ?>
-<title>Simple Invoice System</title>
+<title>SOCHEF</title>
 <script src="js/invoice.js"></script>
 <link href="css/style.css" rel="stylesheet">
 <div class="container content-invoice">
-    <h2 class="title">Simple Invoice System using PHP</h2>
+    <h2 class="title">Herrajes & Tiraderas</h2>
     <form action="" id="invoice-form" method="post" class="invoice-form" role="form" novalidate> 
         <div class="load-animate animated fadeInUp">
             <div class="row">
