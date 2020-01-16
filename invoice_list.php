@@ -5,6 +5,7 @@ include 'Invoice.php';
 $invoice = new Invoice();
 $invoice->checkLoggedIn();
 ?>
+
 <title>SOCHEF</title>
 <script src="js/invoice.js"></script>
 <link href="css/style.css" rel="stylesheet">
