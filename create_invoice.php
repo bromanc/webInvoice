@@ -26,10 +26,10 @@ if (!empty($_POST['companyName']) && $_POST['companyName']) {
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                     <h3>Invoice emitter: </h3>
                     <h4>
-                    <?php echo "<b>User: </b>", $_SESSION['user']; ?><br>	
-                    <?php echo "<b>Address: </b>", $_SESSION['address']; ?><br>	
-                    <?php echo "<b>Mobile number: </b>", $_SESSION['mobile']; ?><br>
-                    <?php echo "<b>Email: </b>", $_SESSION['email']; ?><br>
+                    <?php echo "<b> User: </b>", $_SESSION['user']; ?><br>	
+                    <?php echo "<b> Address: </b>", $_SESSION['address']; ?><br>	
+                    <?php echo "<b> Mobile number: </b>", $_SESSION['mobile']; ?><br>
+                    <?php echo "<b> Email: </b>", $_SESSION['email']; ?><br>
                     </h4>
                 </div>      		
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 pull-right">
