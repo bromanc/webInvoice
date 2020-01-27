@@ -1,7 +1,6 @@
 <?php
 session_start();
 include('header.php');
-
 $loginError = '';
 if (!empty($_POST['email']) && !empty($_POST['pwd'])) {
     include 'Invoice.php';
