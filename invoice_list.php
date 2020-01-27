@@ -34,9 +34,9 @@ $invoice->checkLoggedIn();
         <td>' . $invoiceDate . '</td>
         <td>' . $invoiceDetails["order_receiver_name"] . '</td>
         <td>' . $invoiceDetails["order_total_after_tax"] . '</td>
-        <td><a href="print_invoice.php?invoice_id=' . $invoiceDetails["order_id"] . '" title="Imprimir Factura"><div class="btn btn-primary"><span class="glyphicon glyphicon-print"></span></div></a></td>
-        <td><a href="edit_invoice.php?update_id=' . $invoiceDetails["order_id"] . '"  title="Editar Factura"><div class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span></div></a></td>
-        <td><a href="#" id="' . $invoiceDetails["order_id"] . '" class="deleteInvoice"  title="Borrar Factura"><div class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></div></a></td>
+        <td><a href="print_invoice.php?invoice_id=' . $invoiceDetails["order_id"] . '" title="Print invoice"><div class="btn btn-primary"><span class="glyphicon glyphicon-print"></span></div></a></td>
+        <td><a href="edit_invoice.php?update_id=' . $invoiceDetails["order_id"] . '"  title="Edit invoice"><div class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span></div></a></td>
+        <td><a href="#" id="' . $invoiceDetails["order_id"] . '" class="deleteInvoice"  title="Delete invoice"><div class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></div></a></td>
       </tr>';
         }
         ?>
