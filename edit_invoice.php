@@ -13,7 +13,7 @@ if (!empty($_GET['update_id']) && $_GET['update_id']) {
     $invoiceItems = $invoice->getInvoiceItems($_GET['update_id']);
 }
 ?>
-<title>SOCHEF</title>
+<title> SOCHEF </title>
 <script src="js/invoice.js"></script>
 <link href="css/style.css" rel="stylesheet">
 <div class="container content-invoice">
@@ -57,7 +57,7 @@ if (!empty($_GET['update_id']) && $_GET['update_id']) {
                             <th width="38%">Product Name</th>
                             <th width="15%">Quantity</th>
                             <th width="15%">Price</th>								
-                            <th width="15%">Total</th>
+                            <th width="15%">Total = </th>
                         </tr>
                         <?php
                         $count = 0;
