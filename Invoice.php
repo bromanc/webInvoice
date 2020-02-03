@@ -1,8 +1,6 @@
 <?php
 
 class Invoice {
-
-
     private $host = 'localhost';
     private $user = 'root';
     private $password = "";
@@ -127,7 +125,5 @@ class Invoice {
         $this->deleteInvoiceItems($invoiceId);
         return 1;
     }
-
 }
-
 ?>
