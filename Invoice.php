@@ -135,7 +135,7 @@ class Invoice {
 
     public function get_product_table(){
         $sqlQuery = "SELECT * FROM tabla_productos ORDER BY id_producto";
-        return getData($sqlQuery);
+        return $this->getData($sqlQuery);
     }
 
 }

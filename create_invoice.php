@@ -4,11 +4,13 @@ include('header.php');
 include 'Invoice.php';
 $invoice = new Invoice();
 $invoice->checkLoggedIn();
+
 if (!empty($_POST['companyName']) && $_POST['companyName']) {
     $invoice->saveInvoice($_POST);
     header("Location:invoice_list.php");
 }
 ?>
+
 <title>SOCHEF</title>
 <script src="js/invoice.js"></script>
 <link href="css/style.css" rel="stylesheet">
@@ -45,15 +47,14 @@ if (!empty($_POST['companyName']) && $_POST['companyName']) {
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <table class="table" id="invoiceItem">	
+                    <table class="table table-bordered" id="stockItem">	
                         <thead>
                             <tr>
                                 <th width="2%"><input id="checkAll" class="formcontrol" type="checkbox"></th>
                                 <th width="15%">Prod ID</th>
                                 <th width="53%">Product Name</th>
                                 <th width="15%">Price</th>
-                                <th width="15%">Stock</th>								
-                        
+                                <th width="15%">Stock</th>
                             </tr>	
                         </thead>						
                        <?php
@@ -61,6 +62,7 @@ if (!empty($_POST['companyName']) && $_POST['companyName']) {
                             foreach($productList as $product){
                                 echo '
                                 <tr>
+                                <td><input class = "itemRow" type="checkbox"></td>
                                 <td>' . $product["id_producto"] . '</td>
                                 <td>' . $product["nombre_prod"] .'</td>
                                 <td>' . $product["precio"] .'</td>
@@ -72,12 +74,15 @@ if (!empty($_POST['companyName']) && $_POST['companyName']) {
                     </table>
                 </div>
             </div>
-
+            
+            <button class="btn btn-sucess" id="addRows" type="button" style=" background-color: lightgreen">+ Add to invoice</button>
+            <hr>
+            
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <table class="table table-bordered table-hover" id="invoiceItem">	
                         <tr>
-                            <th width="2%"><input id="checkAll" class="formcontrol" type="checkbox"></th>
+                            <th width="2%"><input id="checkAll" class="formcontrol" type="hidden"></th>
                             <th width="15%">Prod. N</th>
                             <th width="38%">Product Name</th>
                             <th width="15%">Quantity</th>
@@ -95,12 +100,8 @@ if (!empty($_POST['companyName']) && $_POST['companyName']) {
                     </table>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    <button class="btn btn-danger delete" id="removeRows" type="button">- Delete</button>
-                    <button class="btn btn-success" id="addRows" type="button">+ More Items</button>
-                </div>
-            </div>
+            <button class="btn btn-danger delete" id="removeRows" type="button">- Delete</button>
+            
             <div class="row">	
                 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                     <h3>Notes: </h3>
@@ -164,5 +165,4 @@ if (!empty($_POST['companyName']) && $_POST['companyName']) {
             <div class="clearfix"></div>		      	
         </div>
     </form>			
-</div>
 </div>	
