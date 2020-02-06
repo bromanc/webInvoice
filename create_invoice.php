@@ -45,6 +45,36 @@ if (!empty($_POST['companyName']) && $_POST['companyName']) {
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <table class="table" id="invoiceItem">	
+                        <thead>
+                            <tr>
+                                <th width="2%"><input id="checkAll" class="formcontrol" type="checkbox"></th>
+                                <th width="15%">Prod ID</th>
+                                <th width="53%">Product Name</th>
+                                <th width="15%">Price</th>
+                                <th width="15%">Stock</th>								
+                        
+                            </tr>	
+                        </thead>						
+                       <?php
+                            $productList = $invoice->get_product_table();
+                            foreach($productList as $product){
+                                echo '
+                                <tr>
+                                <td>' . $product["id_producto"] . '</td>
+                                <td>' . $product["nombre_prod"] .'</td>
+                                <td>' . $product["precio"] .'</td>
+                                <td>' . $product["cantidad_disponible"] .'</td>
+                                </tr>
+                                ';
+                            }
+                       ?>					
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <table class="table table-bordered table-hover" id="invoiceItem">	
                         <tr>
                             <th width="2%"><input id="checkAll" class="formcontrol" type="checkbox"></th>

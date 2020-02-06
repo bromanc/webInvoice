@@ -1,5 +1,6 @@
 <?php
 
+
 class Invoice {
     private $host = 'localhost';
     private $user = 'root';
@@ -46,7 +47,7 @@ class Invoice {
         $sqlQuery = "
 			SELECT id, email, first_name, last_name, address, mobile 
 			FROM " . $this->invoiceUserTable . " 
-			WHERE email='" . $email . "' AND password='" . $password . "'";
+			WHERE email='" . str_replace('\'', '', $email) . "' AND password='" . str_replace('\'', '', $password) . "'";
         return $this->getData($sqlQuery);
     }
 
@@ -59,13 +60,19 @@ class Invoice {
     public function saveInvoice($POST) {
         $sqlInsert = "
 			INSERT INTO " . $this->invoiceOrderTable . "(user_id, order_receiver_name, order_receiver_address, order_total_before_tax, order_total_tax, order_tax_per, order_total_after_tax, order_amount_paid, order_total_amount_due, note) 
-			VALUES ('" . $POST['userId'] . "', '" . $POST['companyName'] . "', '" . $POST['address'] . "', '" . $POST['subTotal'] . "', '" . $POST['taxAmount'] . "', '" . $POST['taxRate'] . "', '" . $POST['totalAftertax'] . "', '" . $POST['amountPaid'] . "', '" . $POST['amountDue'] . "', '" . $POST['notes'] . "')";
+            VALUES ('" . str_replace('\'', '', $POST['userId']) . "', '" .  str_replace('\'', '', $POST['companyName']) . "', 
+            '" . str_replace('\'', '', $POST['address']) . "', '" . str_replace('\'', '', $POST['subTotal']) . "', 
+            '" . str_replace('\'', '', $POST['taxAmount']) . "', '" . str_replace('\'', '', $POST['taxRate']) . "', 
+            '" . str_replace('\'', '', $POST['totalAftertax']) . "', '" . str_replace('\'', '', $POST['amountPaid']) . "', 
+            '" . str_replace('\'', '', $POST['amountDue']) . "', '" . str_replace('\'', '', $POST['notes']) . "')";
         mysqli_query($this->dbConnect, $sqlInsert);
         $lastInsertId = mysqli_insert_id($this->dbConnect);
         for ($i = 0; $i < count($POST['productCode']); $i++) {
             $sqlInsertItem = "
 			INSERT INTO " . $this->invoiceOrderItemTable . "(order_id, item_code, item_name, order_item_quantity, order_item_price, order_item_final_amount) 
-			VALUES ('" . $lastInsertId . "', '" . $POST['productCode'][$i] . "', '" . $POST['productName'][$i] . "', '" . $POST['quantity'][$i] . "', '" . $POST['price'][$i] . "', '" . $POST['total'][$i] . "')";
+            VALUES ('" . str_replace('\'', '', $lastInsertId) . "', '" . str_replace('\'', '', $POST['productCode'][$i]) . "', 
+            '" . str_replace('\'', '', $POST['productName'][$i]) . "', '" . str_replace('\'', '', $POST['quantity'][$i]) . "', 
+            '" . str_replace('\'', '', $POST['price'][$i]) . "', '" .  str_replace('\'', '', $POST['total'][$i]) . "')";
             mysqli_query($this->dbConnect, $sqlInsertItem);
         }
     }
@@ -125,5 +132,11 @@ class Invoice {
         $this->deleteInvoiceItems($invoiceId);
         return 1;
     }
+
+    public function get_product_table(){
+        $sqlQuery = "SELECT * FROM tabla_productos ORDER BY id_producto";
+        return getData($sqlQuery);
+    }
+
 }
 ?>

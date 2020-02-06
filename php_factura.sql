@@ -80,7 +80,7 @@ CREATE TABLE `factura_usuarios` (
 --
 
 INSERT INTO `factura_usuarios` (`id`, `email`, `password`, `first_name`, `last_name`, `mobile`, `address`) VALUES
-(1, 'registro@baulphp.com', '12345', 'BaulPHP', '', 78979676, '');
+(1, 'willan.tuquerrez@outlook.com', '12345', 'Willan', '', 78979676, '');
 
 --
 -- Índices para tablas volcadas
@@ -130,3 +130,29 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+---
+create table tabla_productos(
+    id_producto int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    nombre_prod  varchar(50) not null,
+    precio float not null,
+    cantidad_disponible int(11)
+);
+
+INSERT INTO tabla_productos VALUES(0,'Manijas de laton',    5.00, 5966);
+INSERT INTO tabla_productos VALUES(0,'Manijas de acero',    8.00, 3166);
+INSERT INTO tabla_productos VALUES(0,'Visagras',            2.55, 1353);
+INSERT INTO tabla_productos VALUES(0,'Candado Veris',       10.00, 7148);
+INSERT INTO tabla_productos VALUES(0,'Candado Monte',       15.00, 8156);
+INSERT INTO tabla_productos VALUES(0,'Tubo de cortina [m]', 5.75, 6263);
+INSERT INTO tabla_productos VALUES(0,'Tubo de drenaje [m]', 8.00, 1588);
+INSERT INTO tabla_productos VALUES(0,'Tubo de agua [m]',    4.00, 5254);
+INSERT INTO tabla_productos VALUES(0,'Foco incandencente',  4.90, 9159);
+INSERT INTO tabla_productos VALUES(0,'Foco led',            6.35, 9451);
+INSERT INTO tabla_productos VALUES(0,'Malla de alambre',    5.00, 100);
+INSERT INTO tabla_productos VALUES(0,'Plancha de madera prensada [m2]', 5.20, 200);
+INSERT INTO tabla_productos VALUES(0,'Plancha plastica [m2]',    6.35, 100);
+INSERT INTO tabla_productos VALUES(0,'Manguera estandar [m]',   8.30, 4100);
+INSERT INTO tabla_productos VALUES(0,'Manguera flexible [m]',   15.40, 3100);
+INSERT INTO tabla_productos VALUES(0,'Manijas de latón',    5.00, 5050);
+INSERT INTO tabla_productos VALUES(0,'Cable de cobre [m]', 1.25, 1000);
