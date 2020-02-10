@@ -27,36 +27,35 @@ $(document).ready(function () {
     var count = $(".itemRow").length;
     $(document).on('click', '#addRows', function () {
         count++;
+
+
         var table = document.getElementById("stockItem");
         var checkBxs = table.getElementsByTagName("INPUT");
-        for (var i = 0; i < checkBxs.length; i++) {
-            if (checkBxs[i].checked) {
-                var row = checkBxs[i].parentNode.parentNode;
-                console.log(row);
+        var data = [];
+        for (var r = 0, n = table.rows.length; r < n; r++) {
+            for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
+                if (checkBxs[r].checked) {
+                    data.push(table.rows[r].cells[c]);
+                }
             }
-
-            /*var htmlRows = '';
-             htmlRows += '<tr>';
-             htmlRows += '<td><input class="itemRow" type="checkbox"></td>';
-             htmlRows += '<td><input type="text" name="productCode[]" id="productCode_' + count + '" class="form-control" autocomplete="off"></td>';
-             htmlRows += '<td><input type="text" name="productName[]" id="productName_' + count + '" class="form-control" autocomplete="off"></td>';
-             htmlRows += '<td><input type="number" name="quantity[]" id="quantity_' + count + '" class="form-control quantity" autocomplete="off"></td>';
-             htmlRows += '<td><input type="number" name="price[]" id="price_' + count + '" class="form-control price" autocomplete="off"></td>';
-             htmlRows += '<td><input type="number" name="total[]" id="total_' + count + '" class="form-control total" autocomplete="off"></td>';
-             htmlRows += '</tr>';
-             //$('#invoiceItem').append(row);*/
         }
 
-        /*var htmlRows = '';
-         htmlRows += '<tr>';
-         htmlRows += '<td><input class="itemRow" type="checkbox"></td>';          
-         htmlRows += '<td><input type="text" name="productCode[]" id="productCode_'+count+'" class="form-control" autocomplete="off"></td>';          
-         htmlRows += '<td><input type="text" name="productName[]" id="productName_'+count+'" class="form-control" autocomplete="off"></td>';	
-         htmlRows += '<td><input type="number" name="quantity[]" id="quantity_'+count+'" class="form-control quantity" autocomplete="off"></td>';   		
-         htmlRows += '<td><input type="number" name="price[]" id="price_'+count+'" class="form-control price" autocomplete="off"></td>';		 
-         htmlRows += '<td><input type="number" name="total[]" id="total_'+count+'" class="form-control total" autocomplete="off"></td>';          
-         htmlRows += '</tr>';
-         $('#invoiceItem').append(htmlRows);*/
+        console.log(data[1].innerText);
+        console.log(data[2].innerText);
+        console.log(data[3].innerText);
+
+
+        var htmlRows = '';
+        htmlRows += '<tr>';
+        htmlRows += '<td><input class="itemRow" type="checkbox"></td>';
+        htmlRows += '<td><input type="text" value="' + data[1].innerText + '" name="productCode[]" id="productCode_' + count + '" class="form-control" autocomplete="off"></td>';
+        htmlRows += '<td><input type="text" value="' + data[2].innerText + '" name="productName[]" id="productName_' + count + '" class="form-control" autocomplete="off"></td>';
+        htmlRows += '<td><input type="number" name="quantity[]" id="quantity_' + count + '" class="form-control quantity" autocomplete="off"></td>';
+        htmlRows += '<td><input type="number" value="' + data[3].innerText + '" name="price[]" id="price_' + count + '" class="form-control price" autocomplete="off"></td>';
+        htmlRows += '<td><input type="number" name="total[]" id="total_' + count + '" class="form-control total" autocomplete="off"></td>';
+        htmlRows += '</tr>';
+        $('#invoiceItem').append(htmlRows);
+
     });
     $(document).on('click', '#removeRows', function () {
         $(".itemRow:checked").each(function () {

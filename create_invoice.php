@@ -51,10 +51,10 @@ if (!empty($_POST['companyName']) && $_POST['companyName']) {
                         <thead>
                             <tr>
                                 <th width="2%"><input id="checkAll" class="formcontrol" type="checkbox"></th>
-                                <th width="15%">Prod ID</th>
-                                <th width="53%">Product Name</th>
-                                <th width="15%">Price</th>
-                                <th width="15%">Stock</th>
+                                <th class="prodid" width="15%">Prod ID</th>
+                                <th class="prodname" width="53%">Product Name</th>
+                                <th class="price" width="15%">Price</th>
+                                <th class="stock" width="15%">Stock</th>
                             </tr>	
                         </thead>						
                        <?php
@@ -89,14 +89,14 @@ if (!empty($_POST['companyName']) && $_POST['companyName']) {
                             <th width="15%">Price</th>								
                             <th width="15%">Total</th>
                         </tr>							
-                        <tr>
+<!--                        <tr>
                             <td><input class="itemRow" type="checkbox"></td>
                             <td><input type="text" name="productCode[]" id="productCode_1" class="form-control" autocomplete="off"></td>
                             <td><input type="text" name="productName[]" id="productName_1" class="form-control" autocomplete="off"></td>			
                             <td><input type="number" name="quantity[]" id="quantity_1" class="form-control quantity" autocomplete="off"></td>
                             <td><input type="number" name="price[]" id="price_1" class="form-control price" autocomplete="off"></td>
                             <td><input type="number" name="total[]" id="total_1" class="form-control total" autocomplete="off"></td>
-                        </tr>						
+                        </tr>						-->
                     </table>
                 </div>
             </div>
@@ -127,7 +127,7 @@ if (!empty($_POST['companyName']) && $_POST['companyName']) {
                         <div class="form-group">
                             <label>Tax Rate: &nbsp;</label>
                             <div class="input-group">
-                                <input value="" type="number" class="form-control" name="taxRate" id="taxRate" placeholder="Tax Rate">
+                                <input value="12" type="number" class="form-control" name="taxRate" id="taxRate" placeholder="Tax Rate">
                                 <div class="input-group-addon">%</div>
                             </div>
                         </div>
